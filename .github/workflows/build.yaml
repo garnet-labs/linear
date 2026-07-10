@@ -6,6 +6,13 @@ on:
     branches-ignore:
       - master
 
+  # Run for pull requests targeting the default branch so the instrumented
+  # build job runs with explicit PR event context (lets the Garnet GitHub App
+  # associate the run with, and comment on, the PR).
+  pull_request:
+    branches:
+      - master
+
   # Allow manually triggering the workflow
   workflow_dispatch:
 
